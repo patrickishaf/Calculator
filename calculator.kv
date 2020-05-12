@@ -1,0 +1,184 @@
+#: import MDRaisedButton kivymd.uix.button.MDRaisedButton
+#: import MDRectangleFlatIconButton kivymd.uix.button.MDRectangleFlatIconButton
+#: import MDLabel kivymd.uix.label.MDLabel
+#: import IconButton kivymd.uix.filemanager.IconButton
+
+
+RootWid:
+<BackgroundColor@Widget>
+    background_color: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+<WhiteLabel@BackgroundColor+MDLabel>:
+    background_color: 1, 1, 1, 1
+<RootWid>:
+    orientation: 'vertical'
+    screen: label1_display
+    screen2: label2_display
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: 33
+        WhiteLabel:
+            id: label1_display
+            font_size: 25
+            text_size: root.width, None
+            theme_text_color: 'Custom'
+            text_color: [0,0,0,1]
+            halign: 'right'
+        WhiteLabel:
+            id: label2_display
+            font_size: 50
+            text_size: root.width, None
+            halign: 'right'
+            theme_text_color: 'Custom'
+            text_color: [0,0,0,1]
+            markup: True
+    BoxLayout:
+        size_hint_y: 66
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 1
+            MDRaisedButton:
+                text: 'C'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,1,1,1]
+                text_color: [1,0,0,1]
+                on_press: root.clear_display()
+            MDRaisedButton:
+                text: '/'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,1,1,1]
+                text_color: [0,0,0,1]
+                on_press: root.add_char(self.text)
+            MDRaisedButton:
+                text: 'X'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,1,1,1]
+                text_color: [0,0,0,1]
+                on_press: root.add_char('*')
+            MDRaisedButton:
+                text: 'del'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,0,0,1]
+                text_color: [1,1,1,1]
+                on_press: root.delete_char()
+        BoxLayout:
+            size_hint_y: 1
+            MDRaisedButton:
+                text: '7'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,1,1,1]
+                text_color: [0,0,0,1]
+                on_press: root.add_char(self.text)
+            MDRaisedButton:
+                text: '8'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,1,1,1]
+                text_color: [0,0,0,1]
+                on_press: root.add_char(self.text)
+            MDRaisedButton:
+                text: '9'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,1,1,1]
+                text_color: [0,0,0,1]
+                on_press: root.add_char(self.text)
+            MDRaisedButton:
+                text: '+'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,0,0,1]
+                text_color: [1,1,1,1]
+                on_press: root.add_char(self.text)
+        BoxLayout:
+            size_hint_y: 1
+            MDRaisedButton:
+                text: '4'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,1,1,1]
+                text_color: [0,0,0,1]
+                on_press: root.add_char(self.text)
+            MDRaisedButton:
+                text: '5'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,1,1,1]
+                text_color: [0,0,0,1]
+                on_press: root.add_char(self.text)
+            MDRaisedButton:
+                text: '6'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,1,1,1]
+                text_color: [0,0,0,1]
+                on_press: root.add_char(self.text)
+            MDRaisedButton:
+                text: '-'
+                size_hint: (1, 1)
+                theme_text_color: 'Custom'
+                md_bg_color: [1,0,0,1]
+                text_color: [1,1,1,1]
+                on_press: root.add_char(self.text)
+        BoxLayout:
+            size_hint_y: 2
+            BoxLayout:
+                size_hint_x: 3
+                orientation: 'vertical'
+                BoxLayout:
+                    MDRaisedButton:
+                        text: '1'
+                        size_hint: (1, 1)
+                        theme_text_color: 'Custom'
+                        md_bg_color: [1,1,1,1]
+                        text_color: [0,0,0,1]
+                        on_press: root.add_char(self.text)
+                    MDRaisedButton:
+                        text: '2'
+                        size_hint: (1, 1)
+                        theme_text_color: 'Custom'
+                        md_bg_color: [1,1,1,1]
+                        text_color: [0,0,0,1]
+                        on_press: root.add_char(self.text)
+                    MDRaisedButton:
+                        text: '3'
+                        size_hint: (1, 1)
+                        theme_text_color: 'Custom'
+                        md_bg_color: [1,1,1,1]
+                        text_color: [0,0,0,1]
+                        on_press: root.add_char(self.text)
+                BoxLayout:
+                    MDRaisedButton:
+                        text: '0'
+                        size_hint: (2, 1)
+                        theme_text_color: 'Custom'
+                        md_bg_color: [1,0,0,1]
+                        text_color: [1,1,1,1]
+                        on_press: root.add_char(self.text)
+                    MDRaisedButton:
+                        size_hint_x: 1
+                        text: '.'
+                        size_hint: (1, 1)
+                        theme_text_color: 'Custom'
+                        md_bg_color: [1,1,1,1]
+                        text_color: [0,0,0,1]
+                        on_press: root.add_char(self.text)
+            BoxLayout:
+                size_hint_x: 1
+                MDRaisedButton:
+                    text: '='
+                    size_hint: (1, 1)
+                    theme_text_color: 'Custom'
+                    md_bg_color: [1,0,0,1]
+                    text_color: [1,1,1,1]
+                    on_press: root.compute()
